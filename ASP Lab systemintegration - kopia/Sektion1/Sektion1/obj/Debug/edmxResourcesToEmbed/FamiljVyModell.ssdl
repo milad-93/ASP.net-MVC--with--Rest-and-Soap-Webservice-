@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FamiljDatabasenModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Familj">
+    <Key>
+      <PropertyRef Name="familjId" />
+    </Key>
+    <Property Name="familjId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="familjnamn" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="personId" />
+    </Key>
+    <Property Name="personId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="familjId" Type="int" Nullable="false" />
+    <Property Name="fornamn" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="efternamn" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="alder" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Utbildning" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Familj_ToTable">
+    <End Role="Familj" Type="Self.Familj" Multiplicity="1" />
+    <End Role="Person" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Familj">
+        <PropertyRef Name="familjId" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="familjId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FamiljDatabasenModelStoreContainer">
+    <EntitySet Name="Familj" EntityType="Self.Familj" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Familj_ToTable" Association="Self.FK_Familj_ToTable">
+      <End Role="Familj" EntitySet="Familj" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,58 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* MILADS EGNA CSS */
+
+
+.nav-mil {
+    height: 2rem;
+    background-color: #e3f2fd;
+}
+.jum {
+    background-color: skyblue;
+    border-radius: 0 !important;
+    
+}
+.button-all-a li a, .button-all-a a {
+    color: black !important;
+    font-size: 2rem !important;
+}
+.button-all-a li a:hover, .button-all-a a:hover{
+    background-color: black !important;
+    color: white !important;
+}
+.button-all-a li a:focus, .button-all-a a:focus {
+    background-color: black !important;
+    color: white !important;
+}
+.dropdown-mil a{
+    float: left !important;
+    min-width: 160px !important;
+    padding: 5px 0 !important;
+    margin: 2px 0 0 !important;
+}
+.dropdown-mil{
+    background-color: lightskyblue;
+}

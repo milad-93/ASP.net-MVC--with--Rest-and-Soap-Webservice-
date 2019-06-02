@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Sektion1.Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    @Html.ActionLink("Lägg till en ny person", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+         Förnamn
+        </th>
+        <th>
+            Efternamn
+        </th>
+        <th>
+           Ålder
+        </th>
+        <th>
+            Telefonnummer
+        </th>
+        <th>
+           Utbildning
+        </th>
+        <th>
+            FamiljGrupp
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fornamn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.efternamn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Utbildning)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Familj.familjnamn)
+        </td>
+        <td>
+            @Html.ActionLink("Redigera", "Edit", new { id=item.personId }) |
+            @Html.ActionLink("Detaljer", "Details", new { id=item.personId }) |
+            @Html.ActionLink("Radera", "Delete", new { id=item.personId })
+        </td>
+    </tr>
+}
+
+</table>

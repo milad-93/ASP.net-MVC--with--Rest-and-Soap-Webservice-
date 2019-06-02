@@ -1,0 +1,51 @@
+﻿@model List<Sektion1.ServiceReference1.PersonerData>
+
+@{
+    ViewBag.Title = "Soap Webservice ";
+}
+
+<h1>Visar Data</h1>
+
+
+
+
+<div class="row">
+    <div class="col-md-4">
+
+
+        <table class="table ">
+
+            <tr>
+                <th>ID </th>
+                <th>Förnamn</th>
+                <th>Efternamn</th>
+                <th>Ålder</th>
+
+            </tr>
+
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(m => item.Id)</td>
+                    <td> @Html.DisplayFor(m => item.Fornamn)</td>
+                    <td> @Html.DisplayFor(m => item.Efternamn)</td>
+                    <td> @Html.DisplayFor(m => item.Alder)</td>
+
+                </tr>
+            }
+
+
+
+        </table>
+
+
+    </div>
+
+</div>
+
+
+
+
+

@@ -1,0 +1,24 @@
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\bin\WcfService.dll.config
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\bin\WcfService.dll
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\bin\WcfService.pdb
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\obj\Debug\WcfService.csproj.CoreCompileInputs.cache
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\obj\Debug\WcfService.dll
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\obj\Debug\WcfService.pdb
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\bin\EntityFramework.dll
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\bin\EntityFramework.SqlServer.dll
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\bin\EntityFramework.xml
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\bin\EntityFramework.SqlServer.xml
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\obj\Debug\WcfService.csproj.CopyComplete
+C:\Users\Boss\Desktop\ExaminationLAbb ASP\WcfService\WcfService\obj\Debug\WcfService.csprojAssemblyReference.cache
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\bin\WcfService.dll.config
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\bin\WcfService.dll
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\bin\WcfService.pdb
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\bin\EntityFramework.dll
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\bin\EntityFramework.SqlServer.dll
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\bin\EntityFramework.xml
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\bin\EntityFramework.SqlServer.xml
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\obj\Debug\WcfService.csprojAssemblyReference.cache
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\obj\Debug\WcfService.csproj.CoreCompileInputs.cache
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\obj\Debug\WcfService.csproj.CopyComplete
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\obj\Debug\WcfService.dll
+C:\Users\Boss\Desktop\ASP Lab systemintegration\WcfService\WcfService\obj\Debug\WcfService.pdb

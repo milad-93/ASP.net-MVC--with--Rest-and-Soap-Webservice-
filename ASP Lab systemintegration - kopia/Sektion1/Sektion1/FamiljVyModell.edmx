@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FamiljDatabasenModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Familj">
+          <Key>
+            <PropertyRef Name="familjId" />
+          </Key>
+          <Property Name="familjId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="familjnamn" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="personId" />
+          </Key>
+          <Property Name="personId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="familjId" Type="int" Nullable="false" />
+          <Property Name="fornamn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="efternamn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="alder" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Utbildning" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Familj_ToTable">
+          <End Role="Familj" Type="Self.Familj" Multiplicity="1" />
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Familj">
+              <PropertyRef Name="familjId" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="familjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FamiljDatabasenModelStoreContainer">
+          <EntitySet Name="Familj" EntityType="Self.Familj" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Familj_ToTable" Association="Self.FK_Familj_ToTable">
+            <End Role="Familj" EntitySet="Familj" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FamiljDatabasenModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Familj">
+          <Key>
+            <PropertyRef Name="familjId" />
+          </Key>
+          <Property Name="familjId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="familjnamn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_Familj_ToTable" FromRole="Familj" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="personId" />
+          </Key>
+          <Property Name="personId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="familjId" Type="Int32" Nullable="false" />
+          <Property Name="fornamn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="efternamn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="alder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Utbildning" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Familj" Relationship="Self.FK_Familj_ToTable" FromRole="Person" ToRole="Familj" />
+        </EntityType>
+        <Association Name="FK_Familj_ToTable">
+          <End Role="Familj" Type="Self.Familj" Multiplicity="1" />
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Familj">
+              <PropertyRef Name="familjId" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="familjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FamiljDatabasenEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Familj" EntityType="Self.Familj" />
+          <EntitySet Name="Person" EntityType="Self.Person" />
+          <AssociationSet Name="FK_Familj_ToTable" Association="Self.FK_Familj_ToTable">
+            <End Role="Familj" EntitySet="Familj" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FamiljDatabasenModelStoreContainer" CdmEntityContainer="FamiljDatabasenEntities">
+          <EntitySetMapping Name="Familj">
+            <EntityTypeMapping TypeName="FamiljDatabasenModel.Familj">
+              <MappingFragment StoreEntitySet="Familj">
+                <ScalarProperty Name="familjId" ColumnName="familjId" />
+                <ScalarProperty Name="familjnamn" ColumnName="familjnamn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Person">
+            <EntityTypeMapping TypeName="FamiljDatabasenModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="personId" ColumnName="personId" />
+                <ScalarProperty Name="familjId" ColumnName="familjId" />
+                <ScalarProperty Name="fornamn" ColumnName="fornamn" />
+                <ScalarProperty Name="efternamn" ColumnName="efternamn" />
+                <ScalarProperty Name="alder" ColumnName="alder" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="Utbildning" ColumnName="Utbildning" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

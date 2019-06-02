@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FamiljDatabasenModelStoreContainer" CdmEntityContainer="FamiljDatabasenEntities">
+    <EntitySetMapping Name="Familj">
+      <EntityTypeMapping TypeName="FamiljDatabasenModel.Familj">
+        <MappingFragment StoreEntitySet="Familj">
+          <ScalarProperty Name="familjId" ColumnName="familjId" />
+          <ScalarProperty Name="familjnamn" ColumnName="familjnamn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person">
+      <EntityTypeMapping TypeName="FamiljDatabasenModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="personId" ColumnName="personId" />
+          <ScalarProperty Name="familjId" ColumnName="familjId" />
+          <ScalarProperty Name="fornamn" ColumnName="fornamn" />
+          <ScalarProperty Name="efternamn" ColumnName="efternamn" />
+          <ScalarProperty Name="alder" ColumnName="alder" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="Utbildning" ColumnName="Utbildning" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
